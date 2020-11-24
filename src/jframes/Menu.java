@@ -9,11 +9,14 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import code.Database;
+
 public class Menu extends JFrame {
 
 	private JPanel contentPane;
 
 	public static void main(String[] args) {
+		Database.startConnect("root", "", "jdbc:mysql://localhost:3306/ejemplo");
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -36,7 +39,7 @@ public class Menu extends JFrame {
 		
 		JButton btnLogIn = new JButton("Log In");
 		btnLogIn.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+			public void actionPerformed(ActionEvent arg0) {		
 			}
 		});
 		btnLogIn.setBounds(32, 21, 264, 96);
